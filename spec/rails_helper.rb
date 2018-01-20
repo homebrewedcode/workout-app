@@ -56,7 +56,7 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   #limits the backtrace so there isn't so much to read on failure
-  config.backtrace_exclustion_patterns = [
+  config.backtrace_exclusion_patterns = [
       /\/lib\d*\/ruby\//,
       /org\/jruby\//,
       /bin\//,

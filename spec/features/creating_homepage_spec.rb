@@ -14,11 +14,12 @@ RSpec.feature 'When visiting the homepage' do
 
   scenario 'we should see the content "Workout Lounge!"' do
     visit "/"
-
+    expect(page).to have_content("Workout Lounge!")
   end
 
   scenario 'we should see the content "Show off your workout"' do
-
+    visit "/"
+    expect(page).to have_content("Show off your workout")
   end
 
 end
