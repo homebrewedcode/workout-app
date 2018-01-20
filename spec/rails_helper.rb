@@ -62,5 +62,4 @@ RSpec.configure do |config|
       /bin\//,
       /lib\/rspec\/(core|expectations|matchers|mocks)/
   ]
-
 end
