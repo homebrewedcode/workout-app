@@ -29,7 +29,12 @@
             <li><%= link_to "Athletes Den", root_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <% if user_signed_in? %>
+              <li>Welcome <%= "#{current_user.email}" %>!</li>
+            <% else %>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <li><%= link_to "Sign in", new_user_session_path %></li>
+            <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

@@ -4,7 +4,7 @@ RSpec.feature 'When a user signs up' do
 
   scenario 'they enter valid inputs' do
     visit "/"
-    click_link "Sign Up"
+    click_link "Sign up"
     fill_in "Email", with: "dale@example.com"
     fill_in "Password", with: "Password1!"
     fill_in "Password confirmation", with: "Password1!"
@@ -15,7 +15,7 @@ RSpec.feature 'When a user signs up' do
 
   scenario 'they enter invalid email' do
     visit "/"
-    click_link "Sign Up"
+    click_link "Sign up"
     fill_in "Email", with: "not_an_email@"
     fill_in "Password", with: "Password1!"
     fill_in "Password confirmation", with: "Password1!"
@@ -26,7 +26,7 @@ RSpec.feature 'When a user signs up' do
 
   scenario 'they enter non-matching passwords' do
     visit "/"
-    click_link "Sign Up"
+    click_link "Sign up"
     fill_in "Email", with: "test@example.com"
     fill_in "Password", with: "Password1!"
     fill_in "Password confirmation", with: "DoesNotMatch"
