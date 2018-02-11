@@ -16,7 +16,8 @@ RSpec.feature 'When a user signs in' do
       click_button "Log in"
 
       expect(page).to have_content("Signed in successfully")
-      expect(page).to have_content("Welcome #{@valid_user.email}!")
+      expect(page).to have_content("Signed in as #{@valid_user.email}")
+      expect(page).to have_content("Sign out")
       expect(page).not_to have_content("Sign up")
       expect(page).not_to have_content("Sign in")
     end
@@ -32,6 +33,7 @@ RSpec.feature 'When a user signs in' do
       expect(page).to have_content("Invalid Email or password.")
       expect(page).to have_content("Sign up") && have_content("Sign in")
       expect(page).not_to have_content("Welcome bad@creds.com!")
+      expect(page).not_to have_content("Sign out")
     end
 
 end
