@@ -6,7 +6,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
-
+include Warden::Test::Helpers #required for login_as
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -58,8 +58,9 @@ RSpec.configure do |config|
   #limits the backtrace so there isn't so much to read on failure
   config.backtrace_exclusion_patterns = [
       /\/lib\d*\/ruby\//,
-      /org\/jruby\//,
       /bin\//,
+      /gems/,
+      /spec\/spec_helper\.rb/,
       /lib\/rspec\/(core|expectations|matchers|mocks)/
   ]
 end
