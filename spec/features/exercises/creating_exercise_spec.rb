@@ -27,4 +27,5 @@ RSpec.feature 'When a user creates an exercise' do
     expect(exercise.user_id).to eq(@valid_user.id)
 
   end
+
 end
