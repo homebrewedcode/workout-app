@@ -9,7 +9,6 @@ class ExercisesController < ApplicationController
 
   def create
     @exercise = current_user.exercises.new(exercise_params)
-
     if @exercise.save
       flash[:notice] = "Exercise has been created"
       redirect_to [current_user, @exercise]
